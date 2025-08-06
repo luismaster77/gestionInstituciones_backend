@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.impl.service;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -15,16 +15,16 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.BoletinDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.BoletinEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.mapper.BoletinMapper;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.BoletinRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IBoletinService;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.UserLoginApp;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.dto.BoletinDTO;
+import com.co.lep.gestion.estudiantes.entity.BoletinEntity;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
+import com.co.lep.gestion.estudiantes.mapper.BoletinMapper;
+import com.co.lep.gestion.estudiantes.repository.BoletinRepository;
+import com.co.lep.gestion.estudiantes.service.IBoletinService;
+import com.co.lep.gestion.estudiantes.utilidades.UserLoginApp;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

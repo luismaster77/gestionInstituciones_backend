@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -6,11 +6,11 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.MateriaGradoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.DocenteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.MateriaEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.MateriaGradoEntity;
+import com.co.lep.gestion.estudiantes.dto.MateriaGradoDTO;
+import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.MateriaEntity;
+import com.co.lep.gestion.estudiantes.entity.MateriaGradoEntity;
 
 @Mapper(componentModel = "spring")
 public interface MateriaGradoMapper {

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.menu.entity;
+package com.co.lep.gestion.estudiantes.menu.entity;
 
 import java.io.Serializable;
 

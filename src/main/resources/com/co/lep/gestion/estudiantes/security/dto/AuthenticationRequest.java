@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.dto;
+package com.co.lep.gestion.estudiantes.security.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

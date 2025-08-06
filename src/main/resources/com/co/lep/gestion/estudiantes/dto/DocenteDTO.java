@@ -1,9 +1,9 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.dto;
+package com.co.lep.gestion.estudiantes.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.security.entity.User;
 
 public class DocenteDTO implements Serializable{
 

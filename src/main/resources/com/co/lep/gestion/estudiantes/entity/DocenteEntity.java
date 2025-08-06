@@ -1,9 +1,9 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.entity;
+package com.co.lep.gestion.estudiantes.entity;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.security.entity.User;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

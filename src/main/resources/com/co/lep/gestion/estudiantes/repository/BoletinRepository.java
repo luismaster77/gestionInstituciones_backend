@@ -1,8 +1,8 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository;
+package com.co.lep.gestion.estudiantes.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.BoletinEntity;
+import com.co.lep.gestion.estudiantes.entity.BoletinEntity;
 
 public interface BoletinRepository extends JpaRepository<BoletinEntity, Long>{
 

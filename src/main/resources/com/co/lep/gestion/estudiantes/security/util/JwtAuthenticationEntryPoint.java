@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.util;
+package com.co.lep.gestion.estudiantes.security.util;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.controller;
+package com.co.lep.gestion.estudiantes.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.controller.representacion.FileUploadRequest;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.CabecerasDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.RegistroDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EntityResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.ICsvService;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.controller.representacion.FileUploadRequest;
+import com.co.lep.gestion.estudiantes.dto.CabecerasDTO;
+import com.co.lep.gestion.estudiantes.dto.RegistroDTO;
+import com.co.lep.gestion.estudiantes.entity.EntityResponse;
+import com.co.lep.gestion.estudiantes.service.ICsvService;
 
 @RestController
 @RequestMapping(Constantes.URL_BASE)

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.impl.service;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -10,7 +10,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.DocenteEntity;
+import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
 
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

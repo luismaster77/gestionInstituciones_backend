@@ -1,14 +1,14 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.service;
+package com.co.lep.gestion.estudiantes.service;
 
 import java.util.List;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstadoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstadoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.NivelEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.PeriodoElectivoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.TipoDocumentoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Role;
+import com.co.lep.gestion.estudiantes.dto.EstadoDTO;
+import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.NivelEntity;
+import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.security.entity.Role;
 
 public interface IListaValoresService {
 

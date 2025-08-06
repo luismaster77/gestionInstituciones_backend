@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.constantes;
+package com.co.lep.gestion.estudiantes.constantes;
 
 public class ConstantesListasGenericas {
 

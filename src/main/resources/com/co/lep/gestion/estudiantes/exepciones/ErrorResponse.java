@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.exepciones;
+package com.co.lep.gestion.estudiantes.exepciones;
 
 import org.springframework.http.HttpStatus;
 

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.config;
+package com.co.lep.gestion.estudiantes.security.config;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.jwt.JwtTokenFilter;
+import com.co.lep.gestion.estudiantes.security.jwt.JwtTokenFilter;
 
 import jakarta.servlet.http.HttpServletResponse;
 

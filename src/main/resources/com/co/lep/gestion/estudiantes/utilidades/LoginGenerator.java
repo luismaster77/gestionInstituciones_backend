@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.utilidades;
+package com.co.lep.gestion.estudiantes.utilidades;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,7 +7,7 @@ import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.DocenteDTO;
+import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
 
 public class LoginGenerator {
     private static final int CODE_LENGTH = 7;

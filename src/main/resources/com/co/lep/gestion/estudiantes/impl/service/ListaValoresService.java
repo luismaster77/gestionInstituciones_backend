@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.impl.service;
 
 import java.util.List;
 
@@ -6,24 +6,24 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstadoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstadoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.NivelEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.PeriodoElectivoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.TipoDocumentoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.mapper.EstadoMapper;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.EstadosRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.GradoRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.NivelesRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.PeriodoElectivoRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.RoleRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.TipoDocumentosRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Role;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IListaValoresService;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.dto.EstadoDTO;
+import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.NivelEntity;
+import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
+import com.co.lep.gestion.estudiantes.mapper.EstadoMapper;
+import com.co.lep.gestion.estudiantes.repository.EstadosRepository;
+import com.co.lep.gestion.estudiantes.repository.GradoRepository;
+import com.co.lep.gestion.estudiantes.repository.NivelesRepository;
+import com.co.lep.gestion.estudiantes.repository.PeriodoElectivoRepository;
+import com.co.lep.gestion.estudiantes.repository.RoleRepository;
+import com.co.lep.gestion.estudiantes.repository.TipoDocumentosRepository;
+import com.co.lep.gestion.estudiantes.security.entity.Role;
+import com.co.lep.gestion.estudiantes.service.IListaValoresService;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 @Service
 public class ListaValoresService implements IListaValoresService{

@@ -1,10 +1,10 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.NivelDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.NivelEntity;
+import com.co.lep.gestion.estudiantes.dto.NivelDTO;
+import com.co.lep.gestion.estudiantes.entity.NivelEntity;
 
 @Mapper
 public interface NivelMapper {

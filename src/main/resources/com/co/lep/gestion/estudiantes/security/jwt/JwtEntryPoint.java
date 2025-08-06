@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.jwt;
+package com.co.lep.gestion.estudiantes.security.jwt;
 
 import java.io.IOException;
 

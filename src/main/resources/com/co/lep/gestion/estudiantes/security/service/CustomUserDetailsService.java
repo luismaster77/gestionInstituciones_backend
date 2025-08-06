@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.service;
+package com.co.lep.gestion.estudiantes.security.service;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.UserRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.repository.UserRepository;
+import com.co.lep.gestion.estudiantes.security.entity.User;
 
 @Configuration
 public class CustomUserDetailsService implements UserDetailsService {

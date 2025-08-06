@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.controller;
+package com.co.lep.gestion.estudiantes.controller;
 
 import java.util.List;
 
@@ -14,24 +14,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.DocenteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstudianteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.GradoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.InstitucionDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.MateriaDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.PeriodoElectivoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.DocenteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EntityResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstudianteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.InstitucionEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.MateriaEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.PeriodoElectivoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IAdminService;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
+import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.dto.GradoDTO;
+import com.co.lep.gestion.estudiantes.dto.InstitucionDTO;
+import com.co.lep.gestion.estudiantes.dto.MateriaDTO;
+import com.co.lep.gestion.estudiantes.dto.PeriodoElectivoDTO;
+import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
+import com.co.lep.gestion.estudiantes.entity.EntityResponse;
+import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.InstitucionEntity;
+import com.co.lep.gestion.estudiantes.entity.MateriaEntity;
+import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
+import com.co.lep.gestion.estudiantes.service.IAdminService;
 
 @RestController
 @RequestMapping(Constantes.URL_BASE)

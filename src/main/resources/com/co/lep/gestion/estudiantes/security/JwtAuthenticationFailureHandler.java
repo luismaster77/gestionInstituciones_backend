@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security;
+package com.co.lep.gestion.estudiantes.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;

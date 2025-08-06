@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -9,12 +9,12 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstadoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.GradoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.RegistroDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.TipoDocumentoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IAdminService;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.dto.EstadoDTO;
+import com.co.lep.gestion.estudiantes.dto.GradoDTO;
+import com.co.lep.gestion.estudiantes.dto.RegistroDTO;
+import com.co.lep.gestion.estudiantes.dto.TipoDocumentoDTO;
+import com.co.lep.gestion.estudiantes.service.IAdminService;
 
 @Component
 public class RegistroMapper {

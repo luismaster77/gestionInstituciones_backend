@@ -1,12 +1,12 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.menu.repository;
+package com.co.lep.gestion.estudiantes.menu.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.entity.MenuEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.entity.RoleMenuEntity;
+import com.co.lep.gestion.estudiantes.menu.entity.MenuEntity;
+import com.co.lep.gestion.estudiantes.menu.entity.RoleMenuEntity;
 
 @Repository
 public interface RoleMenuRepository extends JpaRepository<RoleMenuEntity, Long> {

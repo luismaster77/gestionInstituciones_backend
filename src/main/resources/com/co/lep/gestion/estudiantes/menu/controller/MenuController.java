@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.menu.controller;
+package com.co.lep.gestion.estudiantes.menu.controller;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EntityResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.dto.MenuDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.impl.service.MenuService;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.entity.EntityResponse;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
+import com.co.lep.gestion.estudiantes.menu.dto.MenuDTO;
+import com.co.lep.gestion.estudiantes.menu.impl.service.MenuService;
 
 @RestController
 @RequestMapping(Constantes.URL_BASE)

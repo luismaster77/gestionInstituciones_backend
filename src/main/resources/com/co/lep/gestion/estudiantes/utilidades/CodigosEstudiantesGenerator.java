@@ -1,8 +1,8 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.utilidades;
+package com.co.lep.gestion.estudiantes.utilidades;
 
 import java.util.List;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
 
 public class CodigosEstudiantesGenerator {
 

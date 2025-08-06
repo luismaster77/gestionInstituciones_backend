@@ -1,10 +1,10 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.service;
+package com.co.lep.gestion.estudiantes.service;
 
 import java.io.IOException;
 import java.util.List;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.controller.representacion.FileUploadRequest;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.RegistroDTO;
+import com.co.lep.gestion.estudiantes.controller.representacion.FileUploadRequest;
+import com.co.lep.gestion.estudiantes.dto.RegistroDTO;
 
 public interface ICsvService {
 

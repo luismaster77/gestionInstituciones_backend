@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.entity;
+package com.co.lep.gestion.estudiantes.security.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstadoEntity;
+import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,11 +1,11 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.PeriodoElectivoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.dto.PeriodoElectivoDTO;
+import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
 
 @Mapper
 public interface PeriodoElectivoMapper {

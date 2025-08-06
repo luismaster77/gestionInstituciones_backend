@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.exepciones;
+package com.co.lep.gestion.estudiantes.exepciones;
 
 public class RegistroNoGuardadoException extends RuntimeException {
 

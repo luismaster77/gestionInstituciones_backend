@@ -1,8 +1,8 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.utilidades;
+package com.co.lep.gestion.estudiantes.utilidades;
 
 import java.io.Serializable;
 import org.springframework.stereotype.Service;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.DocenteDTO;
+import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
 
 @Service
 public class UserLoginApp implements Serializable{

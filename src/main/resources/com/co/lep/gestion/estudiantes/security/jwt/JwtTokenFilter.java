@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.jwt;
+package com.co.lep.gestion.estudiantes.security.jwt;
 
 import java.io.IOException;
 import java.security.SignatureException;
@@ -13,7 +13,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

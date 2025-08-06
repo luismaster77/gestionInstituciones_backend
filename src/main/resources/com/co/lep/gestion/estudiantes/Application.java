@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes;
+package com.co.lep.gestion.estudiantes;
 
 import javax.sql.DataSource;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.client.RestTemplate;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.mapper.MapperConfig;
+import com.co.lep.gestion.estudiantes.mapper.MapperConfig;
 
 import jakarta.annotation.PostConstruct;
 

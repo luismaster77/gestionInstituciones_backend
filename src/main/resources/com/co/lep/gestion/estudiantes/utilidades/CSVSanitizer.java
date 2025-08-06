@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.utilidades;
+package com.co.lep.gestion.estudiantes.utilidades;
 
 public class CSVSanitizer {
 

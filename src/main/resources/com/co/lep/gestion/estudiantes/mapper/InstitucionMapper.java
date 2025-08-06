@@ -1,12 +1,12 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.InstitucionDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.InstitucionEntity;
+import com.co.lep.gestion.estudiantes.dto.InstitucionDTO;
+import com.co.lep.gestion.estudiantes.entity.InstitucionEntity;
 
 @Mapper
 public interface InstitucionMapper {

@@ -14,7 +14,7 @@ public interface BoletinDetalleRepository extends JpaRepository<BoletinDetalleEn
 	@Query("SELECT e FROM BoletinDetalleEntity e WHERE e.boletinId.id = :boletinId")
 	public List<BoletinDetalleEntity> findByIdBoletin(@Param("boletinId") Long boletinId);
 	
-	@Query("SELECT new com.co.flexicraftsolutions.gestion.estudiantes.dto.BoletinNotasPeriodosDTO( " +
+	@Query("SELECT new com.co.lep.gestion.estudiantes.dto.BoletinNotasPeriodosDTO( " +
 	        "bd.materiaId.nomMateria, " +
 	        "CONCAT(MAX(COALESCE(bd.materiaId.docenteId.nomDocente, '')), ' ', MAX(COALESCE(bd.materiaId.docenteId.ape1Docente, '')), ' ', MAX(COALESCE(bd.materiaId.docenteId.ape2Docente, ''))), " +
 	        "MAX(CASE WHEN pe.codPeriodoElect = 'PRI' THEN bd.nota ELSE null END), " +

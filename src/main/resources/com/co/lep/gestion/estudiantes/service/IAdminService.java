@@ -1,21 +1,21 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.service;
+package com.co.lep.gestion.estudiantes.service;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.DocenteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstudianteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.GradoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.InstitucionDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.MateriaDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.PeriodoElectivoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.DocenteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstudianteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.InstitucionEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.MateriaEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
+import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.dto.GradoDTO;
+import com.co.lep.gestion.estudiantes.dto.InstitucionDTO;
+import com.co.lep.gestion.estudiantes.dto.MateriaDTO;
+import com.co.lep.gestion.estudiantes.dto.PeriodoElectivoDTO;
+import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
+import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.InstitucionEntity;
+import com.co.lep.gestion.estudiantes.entity.MateriaEntity;
+import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
 
 public interface IAdminService {
 

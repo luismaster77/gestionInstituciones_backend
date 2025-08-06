@@ -1,8 +1,8 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.menu.service;
+package com.co.lep.gestion.estudiantes.menu.service;
 
 import java.util.List;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.entity.MenuEntity;
+import com.co.lep.gestion.estudiantes.menu.entity.MenuEntity;
 
 public interface IMenuService {
 

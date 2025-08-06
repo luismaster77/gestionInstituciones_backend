@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security;
+package com.co.lep.gestion.estudiantes.security;
 
 import javax.security.sasl.AuthenticationException;
 

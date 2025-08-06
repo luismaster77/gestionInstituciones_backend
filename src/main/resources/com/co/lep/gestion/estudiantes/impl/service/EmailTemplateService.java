@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.impl.service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

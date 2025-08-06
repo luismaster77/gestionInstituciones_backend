@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository.impl;
+package com.co.lep.gestion.estudiantes.repository.impl;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import javax.validation.Valid;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.DocenteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstudianteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.MateriaEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.BaseRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
+import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.entity.MateriaEntity;
+import com.co.lep.gestion.estudiantes.repository.BaseRepository;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;

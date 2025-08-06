@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.impl.service;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -23,19 +23,19 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.controller.representacion.FileUploadRequest;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstadoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstudianteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.RegistroDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.TipoDocumentoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.mapper.RegistroMapper;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IAdminService;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.ICsvService;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IListaValoresService;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.UserLoginApp;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.controller.representacion.FileUploadRequest;
+import com.co.lep.gestion.estudiantes.dto.EstadoDTO;
+import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.dto.RegistroDTO;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.mapper.RegistroMapper;
+import com.co.lep.gestion.estudiantes.service.IAdminService;
+import com.co.lep.gestion.estudiantes.service.ICsvService;
+import com.co.lep.gestion.estudiantes.service.IListaValoresService;
+import com.co.lep.gestion.estudiantes.utilidades.UserLoginApp;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 @Service
 public class CsvService implements ICsvService {

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository;
+package com.co.lep.gestion.estudiantes.repository;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.TipoDocumentoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.GradoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.dto.TipoDocumentoDTO;
+import com.co.lep.gestion.estudiantes.entity.GradoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
 
 public interface TipoDocumentosRepository extends JpaRepository<TipoDocumentoEntity, Long> {
 	

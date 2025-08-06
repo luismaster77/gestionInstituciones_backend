@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.controller;
+package com.co.lep.gestion.estudiantes.controller;
 
 import java.util.List;
 
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstadoDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EntityResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstadoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.NivelEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.PeriodoElectivoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.TipoDocumentoEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Role;
-import com.co.flexicraftsolutions.gestion.estudiantes.service.IListaValoresService;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.dto.EstadoDTO;
+import com.co.lep.gestion.estudiantes.entity.EntityResponse;
+import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
+import com.co.lep.gestion.estudiantes.entity.NivelEntity;
+import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
+import com.co.lep.gestion.estudiantes.security.entity.Role;
+import com.co.lep.gestion.estudiantes.service.IListaValoresService;
 
 @RestController
 @RequestMapping(Constantes.URL_BASE)

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.service;
+package com.co.lep.gestion.estudiantes.security.service;
 
 import java.security.SignatureException;
 import java.util.Date;
@@ -12,12 +12,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.dto.TokenDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Token;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.jwt.TokenProvider;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.mapper.TokenMapper;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.repository.TokenRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.security.dto.TokenDTO;
+import com.co.lep.gestion.estudiantes.security.entity.Token;
+import com.co.lep.gestion.estudiantes.security.jwt.TokenProvider;
+import com.co.lep.gestion.estudiantes.security.mapper.TokenMapper;
+import com.co.lep.gestion.estudiantes.security.repository.TokenRepository;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 import io.jsonwebtoken.Claims;
 

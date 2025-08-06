@@ -1,6 +1,6 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.menu.entity;
+package com.co.lep.gestion.estudiantes.menu.entity;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Role;
+import com.co.lep.gestion.estudiantes.security.entity.Role;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

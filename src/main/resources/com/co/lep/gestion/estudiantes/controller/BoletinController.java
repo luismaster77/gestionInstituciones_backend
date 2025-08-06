@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.controller;
+package com.co.lep.gestion.estudiantes.controller;
 
 import java.util.List;
 

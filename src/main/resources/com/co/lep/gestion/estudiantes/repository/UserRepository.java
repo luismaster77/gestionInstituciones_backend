@@ -1,11 +1,11 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository;
+package com.co.lep.gestion.estudiantes.repository;
 
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.security.entity.User;
 
 @Component
 public interface UserRepository extends JpaRepository<User, Long> {

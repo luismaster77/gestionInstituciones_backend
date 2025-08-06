@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.auth.controller;
+package com.co.lep.gestion.estudiantes.auth.controller;
 
 import java.util.List;
 
@@ -20,22 +20,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.DocenteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EntityResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
-import com.co.flexicraftsolutions.gestion.estudiantes.impl.service.AdminService;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.DocenteRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.dto.AuthenticationRequest;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.dto.AuthenticationResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.dto.AuthenticationResponseWithUser;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.jwt.TokenProvider;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.service.TokenService;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.LoginGenerator;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.UserLoginApp;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
+import com.co.lep.gestion.estudiantes.entity.EntityResponse;
+import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
+import com.co.lep.gestion.estudiantes.impl.service.AdminService;
+import com.co.lep.gestion.estudiantes.repository.DocenteRepository;
+import com.co.lep.gestion.estudiantes.security.dto.AuthenticationRequest;
+import com.co.lep.gestion.estudiantes.security.dto.AuthenticationResponse;
+import com.co.lep.gestion.estudiantes.security.dto.AuthenticationResponseWithUser;
+import com.co.lep.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.security.jwt.TokenProvider;
+import com.co.lep.gestion.estudiantes.security.service.TokenService;
+import com.co.lep.gestion.estudiantes.utilidades.LoginGenerator;
+import com.co.lep.gestion.estudiantes.utilidades.UserLoginApp;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

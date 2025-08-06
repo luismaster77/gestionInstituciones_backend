@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.config;
+package com.co.lep.gestion.estudiantes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

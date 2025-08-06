@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.controller.representacion;
+package com.co.lep.gestion.estudiantes.controller.representacion;
 
 
 import java.io.Serializable;

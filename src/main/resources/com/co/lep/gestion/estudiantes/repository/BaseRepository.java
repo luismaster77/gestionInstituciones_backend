@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository;
+package com.co.lep.gestion.estudiantes.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

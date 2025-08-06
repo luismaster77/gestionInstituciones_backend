@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.entity;
+package com.co.lep.gestion.estudiantes.security.entity;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.menu.impl.service;
+package com.co.lep.gestion.estudiantes.menu.impl.service;
 
 import java.util.List;
 import java.util.Map;
@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.dto.ItemMenuDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.dto.MenuDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.entity.MenuEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.repository.RoleMenuRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.service.IMenuService;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.RoleRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Role;
+import com.co.lep.gestion.estudiantes.menu.dto.ItemMenuDTO;
+import com.co.lep.gestion.estudiantes.menu.dto.MenuDTO;
+import com.co.lep.gestion.estudiantes.menu.entity.MenuEntity;
+import com.co.lep.gestion.estudiantes.menu.repository.RoleMenuRepository;
+import com.co.lep.gestion.estudiantes.menu.service.IMenuService;
+import com.co.lep.gestion.estudiantes.repository.RoleRepository;
+import com.co.lep.gestion.estudiantes.security.entity.Role;
 
 @Service
 public class MenuService implements IMenuService{

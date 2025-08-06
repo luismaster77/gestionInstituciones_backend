@@ -1,8 +1,8 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.impl.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.security.entity.User;
 
 public interface UserService{
 	

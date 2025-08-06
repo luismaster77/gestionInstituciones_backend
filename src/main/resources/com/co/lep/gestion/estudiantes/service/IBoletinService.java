@@ -1,9 +1,9 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.service;
+package com.co.lep.gestion.estudiantes.service;
 
 import java.util.List;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.BoletinDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.BoletinEntity;
+import com.co.lep.gestion.estudiantes.dto.BoletinDTO;
+import com.co.lep.gestion.estudiantes.entity.BoletinEntity;
 
 public interface IBoletinService {
 

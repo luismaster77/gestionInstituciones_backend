@@ -1,8 +1,8 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.controller.representacion.AuthorizationRequest;
-import com.co.flexicraftsolutions.gestion.estudiantes.controller.representacion.UserResponse;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.User;
+import com.co.lep.gestion.estudiantes.controller.representacion.AuthorizationRequest;
+import com.co.lep.gestion.estudiantes.controller.representacion.UserResponse;
+import com.co.lep.gestion.estudiantes.security.entity.User;
 
 public class UserMapper {
 

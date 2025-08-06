@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.dto;
+package com.co.lep.gestion.estudiantes.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

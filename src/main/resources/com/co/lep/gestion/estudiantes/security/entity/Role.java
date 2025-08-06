@@ -1,9 +1,9 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.entity;
+package com.co.lep.gestion.estudiantes.security.entity;
 
 import java.io.Serializable;
 import java.util.List;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.menu.entity.MenuEntity;
+import com.co.lep.gestion.estudiantes.menu.entity.MenuEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

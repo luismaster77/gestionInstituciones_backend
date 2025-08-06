@@ -1,11 +1,11 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.exepciones;
+package com.co.lep.gestion.estudiantes.exepciones;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Mensajes;
+import com.co.lep.gestion.estudiantes.constantes.Mensajes;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {

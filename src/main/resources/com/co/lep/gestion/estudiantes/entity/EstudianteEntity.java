@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.entity;
+package com.co.lep.gestion.estudiantes.entity;
 
 import java.io.Serializable;
 import java.util.Date;

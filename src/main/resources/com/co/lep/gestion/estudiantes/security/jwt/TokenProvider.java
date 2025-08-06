@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.security.jwt;
+package com.co.lep.gestion.estudiantes.security.jwt;
 
 import java.security.Key;
 import java.security.SignatureException;
@@ -10,12 +10,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.dto.TokenDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.entity.Token;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.mapper.TokenMapper;
-import com.co.flexicraftsolutions.gestion.estudiantes.security.repository.TokenRepository;
-import com.co.flexicraftsolutions.gestion.estudiantes.utilidades.Validador;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.security.dto.TokenDTO;
+import com.co.lep.gestion.estudiantes.security.entity.Token;
+import com.co.lep.gestion.estudiantes.security.mapper.TokenMapper;
+import com.co.lep.gestion.estudiantes.security.repository.TokenRepository;
+import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

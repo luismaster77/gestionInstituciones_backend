@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.mapper;
+package com.co.lep.gestion.estudiantes.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -6,8 +6,8 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.factory.Mappers;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.MateriaDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.MateriaEntity;
+import com.co.lep.gestion.estudiantes.dto.MateriaDTO;
+import com.co.lep.gestion.estudiantes.entity.MateriaEntity;
 
 @Mapper(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface MateriaMapper {

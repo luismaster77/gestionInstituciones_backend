@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository;
+package com.co.lep.gestion.estudiantes.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstadoEntity;
+import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
 
 public interface EstadosRepository extends JpaRepository<EstadoEntity, Long> {
 

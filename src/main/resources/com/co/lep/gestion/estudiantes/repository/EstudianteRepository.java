@@ -1,4 +1,4 @@
-package com.co.flexicraftsolutions.gestion.estudiantes.repository;
+package com.co.lep.gestion.estudiantes.repository;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.co.flexicraftsolutions.gestion.estudiantes.constantes.Constantes;
-import com.co.flexicraftsolutions.gestion.estudiantes.dto.EstudianteDTO;
-import com.co.flexicraftsolutions.gestion.estudiantes.entity.EstudianteEntity;
-import com.co.flexicraftsolutions.gestion.estudiantes.repository.impl.AdminPrincipal;
+import com.co.lep.gestion.estudiantes.constantes.Constantes;
+import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.repository.impl.AdminPrincipal;
 
 @Repository
 public interface EstudianteRepository extends JpaRepository<EstudianteEntity, Long>{
