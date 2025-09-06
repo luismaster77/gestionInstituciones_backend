@@ -18,7 +18,7 @@ import com.co.lep.gestion.estudiantes.entity.BoletinConfiguracionEntity;
 import com.co.lep.gestion.estudiantes.entity.EntityResponse;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
-import com.co.lep.gestion.estudiantes.impl.service.BoletinConfiguracionService;
+import com.co.lep.gestion.estudiantes.service.impl.BoletinConfiguracionService;
 
 @RestController
 @RequestMapping(value = Constantes.URL_BASE)

@@ -61,7 +61,7 @@ public class WebSecurityConfig{
 						"209.145.57.79"
 						,"https://devseniortech.com" 
 						,"https://gestionboletines.devseniortech.com"
-						//,"http://localhost:4200"
+						,"http://localhost:4200"
 						));
 				corsConfiguration.setAllowedMethods(List.of(
 						"HEAD", 

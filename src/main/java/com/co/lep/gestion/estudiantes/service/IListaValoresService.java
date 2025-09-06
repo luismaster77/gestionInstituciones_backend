@@ -9,6 +9,7 @@ import com.co.lep.gestion.estudiantes.entity.GradoEntity;
 import com.co.lep.gestion.estudiantes.entity.NivelEntity;
 import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
 import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoEvaluacionEntity;
 import com.co.lep.gestion.estudiantes.security.entity.Role;
 
 public interface IListaValoresService {
@@ -28,5 +29,6 @@ public interface IListaValoresService {
 	List<Role> consultarRolesAplicacion();
 
 	List<CiudadEntity> buscarCiudadPorNombre(String nombre);
-	
+
+	List<TipoEvaluacionEntity> consultarTipoEvaluacion();
 }

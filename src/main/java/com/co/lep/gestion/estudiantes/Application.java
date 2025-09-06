@@ -7,8 +7,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.client.RestTemplate;
-import com.co.lep.gestion.estudiantes.impl.service.BoletinConfiguracionService;
+
 import com.co.lep.gestion.estudiantes.mapper.MapperConfig;
+import com.co.lep.gestion.estudiantes.service.impl.BoletinConfiguracionService;
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 import jakarta.annotation.PostConstruct;
 import com.co.lep.gestion.estudiantes.tunnel.SshTunnelConfig;

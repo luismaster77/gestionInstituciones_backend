@@ -29,15 +29,15 @@ public class AdminPeriodoElectivoController {
 	IAdminService iAdminService;
 
 	@PostMapping(value = Constantes.ENDPOINT_CONSULTAR_PERIODO_ELECTIVO)
-	public ResponseEntity<EntityResponse<List<PeriodoElectivoEntity>>> consultarPeriodoElectivon(
+	public ResponseEntity<EntityResponse<List<PeriodoElectivoEntity>>> consultarPeriodoElectivo(
 			@Valid @RequestBody PeriodoElectivoDTO periodoElectivoDTO) {
 		try {
 
-			List<PeriodoElectivoEntity> institucionList = iAdminService.consultarPeriodoElectivo(periodoElectivoDTO);
+			List<PeriodoElectivoEntity> periodoElectivosList = iAdminService.consultarPeriodoElectivo(periodoElectivoDTO);
 
 			EntityResponse<List<PeriodoElectivoEntity>> response = new EntityResponse<>();
 			response.setSuccess(true);
-			response.setData(institucionList);
+			response.setData(periodoElectivosList);
 			return ResponseEntity.ok(response);
 
 		} catch (RegistroNoEncontradoException ex) {
@@ -58,11 +58,11 @@ public class AdminPeriodoElectivoController {
 			@Valid @RequestBody PeriodoElectivoDTO periodoElectivoDTO) {
 		try {
 
-			PeriodoElectivoEntity institucion = iAdminService.consultarPeriodoElectivoById(periodoElectivoDTO);
+			PeriodoElectivoEntity periodoElectivo = iAdminService.consultarPeriodoElectivoById(periodoElectivoDTO);
 
 			EntityResponse<PeriodoElectivoEntity> response = new EntityResponse<>();
 			response.setSuccess(true);
-			response.setData(institucion);
+			response.setData(periodoElectivo);
 			return ResponseEntity.ok(response);
 
 		} catch (RegistroNoEncontradoException ex) {
@@ -127,5 +127,4 @@ public class AdminPeriodoElectivoController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 		}
 	}
-
 }

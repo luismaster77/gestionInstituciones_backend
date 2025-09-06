@@ -1,11 +1,14 @@
-package com.co.lep.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
+
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -16,8 +19,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.co.lep.gestion.estudiantes.constantes.Constantes;
 import com.co.lep.gestion.estudiantes.constantes.Mensajes;
 import com.co.lep.gestion.estudiantes.dto.CiudadDTO;
+import com.co.lep.gestion.estudiantes.dto.DetalleEstudiantesNotaDTO;
 import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
 import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.dto.EstudiantesNotaDTO;
 import com.co.lep.gestion.estudiantes.dto.GradoDTO;
 import com.co.lep.gestion.estudiantes.dto.InstitucionDTO;
 import com.co.lep.gestion.estudiantes.dto.MateriaDTO;
@@ -25,9 +30,11 @@ import com.co.lep.gestion.estudiantes.dto.PasswordDTO;
 import com.co.lep.gestion.estudiantes.dto.PeriodoElectivoDTO;
 import com.co.lep.gestion.estudiantes.dto.SedeDTO;
 import com.co.lep.gestion.estudiantes.entity.CiudadEntity;
+import com.co.lep.gestion.estudiantes.entity.DetalleEstudianteNotasEntity;
 import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
 import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
 import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.entity.EstudianteNotasEntity;
 import com.co.lep.gestion.estudiantes.entity.GradoEntity;
 import com.co.lep.gestion.estudiantes.entity.GradoMateriasEntity;
 import com.co.lep.gestion.estudiantes.entity.InstitucionEntity;
@@ -48,9 +55,11 @@ import com.co.lep.gestion.estudiantes.mapper.PeriodoElectivoMapper;
 import com.co.lep.gestion.estudiantes.mapper.SedeMapper;
 import com.co.lep.gestion.estudiantes.mapper.UsuarioMapper;
 import com.co.lep.gestion.estudiantes.repository.CiudadRepository;
+import com.co.lep.gestion.estudiantes.repository.DetalleEstudiantesNotaRepository;
 import com.co.lep.gestion.estudiantes.repository.DocenteRepository;
 import com.co.lep.gestion.estudiantes.repository.EstadosRepository;
 import com.co.lep.gestion.estudiantes.repository.EstudianteRepository;
+import com.co.lep.gestion.estudiantes.repository.EstudiantesNotaRepository;
 import com.co.lep.gestion.estudiantes.repository.GradoMateriasRepository;
 import com.co.lep.gestion.estudiantes.repository.GradoRepository;
 import com.co.lep.gestion.estudiantes.repository.InstitucionRepository;
@@ -68,6 +77,7 @@ import com.co.lep.gestion.estudiantes.security.entity.User;
 import com.co.lep.gestion.estudiantes.service.IAdminService;
 import com.co.lep.gestion.estudiantes.utilidades.CodigosGenerator;
 import com.co.lep.gestion.estudiantes.utilidades.PasswordGenerator;
+import com.co.lep.gestion.estudiantes.utilidades.Utilidades;
 import com.co.lep.gestion.estudiantes.utilidades.Validador;
 
 @Service
@@ -138,7 +148,13 @@ public class AdminService extends BaseService implements IAdminService {
 
 	@Autowired
 	RoleRepository roleRepository;
+	
+	@Autowired
+	EstudiantesNotaRepository estudiantesNotaRepository;
 
+	@Autowired
+	DetalleEstudiantesNotaRepository detalleEstudiantesNotaRepository;
+	
 	@Autowired
 	PasswordEncoder passwordEncoder;
 
@@ -1186,7 +1202,8 @@ public class AdminService extends BaseService implements IAdminService {
 	public List<PeriodoElectivoEntity> consultarPeriodoElectivo(@Valid PeriodoElectivoDTO periodoElectivoDTO) {
 		try {
 
-			List<PeriodoElectivoEntity> perList = periodoElectivoRepository.consultarPeriodoElectivo(periodoElectivoDTO.getNomPeriodoElect(), obtenerInstitucionUsuario().getId());
+			List<PeriodoElectivoEntity> perList = periodoElectivoRepository.consultarPeriodoElectivo(periodoElectivoDTO.getNomPeriodoElect(), 
+																									 obtenerInstitucionUsuario().getId());
 
 			if (Validador.isEmpty(perList)) {
 				throw new RegistroNoEncontradoException(Mensajes.TXT_ERROR_LISTAS_VACIAS);
@@ -1305,6 +1322,174 @@ public class AdminService extends BaseService implements IAdminService {
 		}
 	}
 	
+	@Override
+	public List<MateriaEntity> consultarMateriaByIdDocente() {
+		try {
+			
+			List<MateriaEntity> materiasList = materiaRepository.findByDocenteIdId(obtenerUsuarioApp().getId());
+
+			if (Validador.isEmpty(materiasList)) {
+				throw new RegistroNoEncontradoException(Mensajes.TXT_ERROR_LISTAS_VACIAS);
+			}
+			
+			return materiasList;
+		} catch (RegistroNoEncontradoException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ServiceException(Mensajes.TXT_ERROR_CONSULTAR_REGISTRO);
+		}
+	}
+	
+
+	@Override
+	public List<EstudianteEntity> consultarEstudiantesByGradoId(@Valid Long gradoId) {
+		try {
+			
+			List<EstudianteEntity> estudiantesList = estudianteRepository.findByInstitucionIdIdAndGradoIdId(obtenerInstitucionUsuario().getId(),
+																											gradoId);
+
+			if (Validador.isEmpty(estudiantesList)) {
+				throw new RegistroNoEncontradoException(Mensajes.TXT_ERROR_LISTAS_VACIAS);
+			}
+			
+			return estudiantesList;
+		} catch (RegistroNoEncontradoException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ServiceException(Mensajes.TXT_ERROR_CONSULTAR_REGISTRO);
+		}
+	}
+	
+	@Transactional
+	public void crearEstudiantesNota(@Valid EstudiantesNotaDTO estudiantesNotaDTO) {
+
+		try {
+			EstudianteNotasEntity estudianteNotasEntity = new EstudianteNotasEntity();
+			estudianteNotasEntity.setMateriaId(estudiantesNotaDTO.getMateriaId());
+			estudianteNotasEntity.setGradoId(estudiantesNotaDTO.getGradoId());
+			estudianteNotasEntity.setPeriodoElectivoId(estudiantesNotaDTO.getPeriodoElectivoId());
+			estudianteNotasEntity.setNomEvaluacion(estudiantesNotaDTO.getNomEvaluacion());
+			estudianteNotasEntity.setTipoEvaluacionId(estudiantesNotaDTO.getTipoEvaluacionId());
+			estudianteNotasEntity.setUsuarioId(obtenerUsuarioApp());
+			estudianteNotasEntity.setFecEvaluacion(new Date());
+
+			EstudianteNotasEntity estudianteNotasGuardado = estudiantesNotaRepository.save(estudianteNotasEntity);
+
+			for (EstudianteDTO estudianteDTO : estudiantesNotaDTO.getEstudiantes()) {
+				DetalleEstudianteNotasEntity detalleEstudianteNotasEntity = new DetalleEstudianteNotasEntity();
+				EstudianteEntity estudiantEntity = estudianteRepository.findById(estudianteDTO.getId())
+						.orElseThrow(() -> new RuntimeException("Estudiante no encontrado con ID: " + estudianteDTO.getId()));
+				detalleEstudianteNotasEntity.setEstudianteId(estudiantEntity);
+				detalleEstudianteNotasEntity.setNota(estudianteDTO.getNota());
+				detalleEstudianteNotasEntity.setEstudianteNotasId(estudianteNotasGuardado);
+				detalleEstudianteNotasEntity.setTxtObservaciones(estudianteDTO.getTxtObservaciones());
+
+				detalleEstudiantesNotaRepository.save(detalleEstudianteNotasEntity);
+			}
+
+		} catch (RegistroNoEncontradoException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ServiceException(Mensajes.TXT_ERROR_CONSULTAR_REGISTRO);
+		}
+	}
+	
+
+	@Override
+	public void actualizarEstudiantesNota(@Valid EstudiantesNotaDTO estudiantesNotaDTO) {
+		try {
+			
+			EstudianteNotasEntity estudianteNotasEntity = estudiantesNotaRepository.findById(estudiantesNotaDTO.getId())
+																				   .orElseThrow(() -> new RegistroNoEncontradoException("Registro no encontrado"));
+			
+			estudianteNotasEntity.setMateriaId(estudiantesNotaDTO.getMateriaId());
+			estudianteNotasEntity.setGradoId(estudiantesNotaDTO.getGradoId());
+			estudianteNotasEntity.setPeriodoElectivoId(estudiantesNotaDTO.getPeriodoElectivoId());
+			estudianteNotasEntity.setNomEvaluacion(estudiantesNotaDTO.getNomEvaluacion());
+			estudianteNotasEntity.setTipoEvaluacionId(estudiantesNotaDTO.getTipoEvaluacionId());
+			estudianteNotasEntity.setUsuarioId(obtenerUsuarioApp());
+			estudianteNotasEntity.setFecEvaluacion(new Date());
+
+			EstudianteNotasEntity estudianteNotasGuardado = estudiantesNotaRepository.save(estudianteNotasEntity);
+			
+			List<DetalleEstudianteNotasEntity> detalleNotasList = detalleEstudiantesNotaRepository.findByEstudianteNotasIdId(estudianteNotasGuardado.getId(),
+																														!Validador.objetoEsNulo(estudiantesNotaDTO.getEstudianteId()) ?
+																														estudiantesNotaDTO.getEstudianteId().getId():null);
+			
+			// Crear un mapa para acceso rápido a los estudiantes existentes por ID
+			Map<Long, DetalleEstudianteNotasEntity> detalleEstudianteNota = detalleNotasList.stream()
+			        .collect(Collectors.toMap(detalle -> detalle.getEstudianteId().getId(), Function.identity()));
+			
+			
+			// Recorrer los estudiantes que llegan en el DTO
+			for (EstudianteDTO estudianteDTO : estudiantesNotaDTO.getEstudiantes()) {
+			  
+			    if (estudianteDTO.getId() != null) {
+			    	DetalleEstudianteNotasEntity detalleExistente = detalleEstudianteNota.get(estudianteDTO.getId());
+
+			        // Si existe el estudiante existe en los detalles de la valoración, actualizar la nota
+			        if (detalleExistente != null) {
+			            detalleExistente.setNota(estudianteDTO.getNota());		  
+			            detalleExistente.setTxtObservaciones(estudianteDTO.getTxtObservaciones());
+			            // Guardar el detalle actualizado
+			            detalleEstudiantesNotaRepository.save(detalleExistente);
+			        }
+			    }
+			}
+			
+		} catch (RegistroNoEncontradoException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ServiceException(Mensajes.TXT_ERROR_CONSULTAR_REGISTRO);
+		}
+	}
+
+	@Override
+	public List<EstudianteNotasEntity> consultarEstudiantesNota(EstudiantesNotaDTO estudiantesNotaDTO) {
+		try {
+			
+			List<EstudianteNotasEntity> notasEstudiantesList = estudiantesNotaRepository.buscarNotasEstudiante(obtenerUsuarioApp().getId(), 
+															   !Validador.objetoEsNulo(estudiantesNotaDTO.getEstudianteId()) ? estudiantesNotaDTO.getEstudianteId().getId():null, 
+															   !Validador.objetoEsNulo(estudiantesNotaDTO.getMateriaId()) ? estudiantesNotaDTO.getMateriaId().getId():null, 
+															   !Validador.objetoEsNulo(estudiantesNotaDTO.getGradoId()) ? estudiantesNotaDTO.getGradoId().getId():null, 
+															   !Validador.objetoEsNulo(estudiantesNotaDTO.getPeriodoElectivoId()) ? estudiantesNotaDTO.getPeriodoElectivoId().getId():null, 
+															   Utilidades.convertirDateToString(estudiantesNotaDTO.getFecEvaluacion()));
+			if (Validador.isEmpty(notasEstudiantesList)) {
+				throw new RegistroNoEncontradoException(Mensajes.TXT_ERROR_LISTAS_VACIAS);
+			}
+
+			return notasEstudiantesList;
+			
+			
+		} catch (RegistroNoEncontradoException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ServiceException(Mensajes.TXT_ERROR_CONSULTAR_REGISTRO);
+		}
+	}
+
+	@Override
+	public List<DetalleEstudianteNotasEntity> consultarEstudiantesNotaById(@Valid DetalleEstudiantesNotaDTO detalleNota) {
+		try {
+			
+			List<DetalleEstudianteNotasEntity> notasEstudiantesList = detalleEstudiantesNotaRepository.findByEstudianteNotasIdId(detalleNota.getEstudiantesNotaId().getId(), 
+																																 !Validador.esNuloOVacio(detalleNota.getEstudianteId()) ?
+																																 detalleNota.getEstudianteId().getId():null);
+																							   
+			
+			if (Validador.isEmpty(notasEstudiantesList)) {
+				throw new RegistroNoEncontradoException(Mensajes.TXT_ERROR_LISTAS_VACIAS);
+			}
+			
+			return notasEstudiantesList;
+			
+		} catch (RegistroNoEncontradoException e) {
+			throw e;
+		} catch (Exception e) {
+			throw new ServiceException(Mensajes.TXT_ERROR_CONSULTAR_REGISTRO);
+		}
+	}
+
 	private CiudadEntity obtenerCiudad(CiudadDTO ciudadId) {
 		CiudadEntity ciudadEntity = null;
 		
@@ -1326,7 +1511,6 @@ public class AdminService extends BaseService implements IAdminService {
 		}
 		return sedeEntity;
 	}
-
 
 	private String generarCodigo(String nombre, List<String> codList) {
 		return CodigosGenerator.generateUniqueCodigo(nombre, codList);

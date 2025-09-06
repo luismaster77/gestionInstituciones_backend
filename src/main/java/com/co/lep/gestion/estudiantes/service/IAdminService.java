@@ -1,18 +1,23 @@
 package com.co.lep.gestion.estudiantes.service;
 
 import java.util.List;
+
 import javax.validation.Valid;
 
+import com.co.lep.gestion.estudiantes.dto.DetalleEstudiantesNotaDTO;
 import com.co.lep.gestion.estudiantes.dto.DocenteDTO;
 import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.dto.EstudiantesNotaDTO;
 import com.co.lep.gestion.estudiantes.dto.GradoDTO;
 import com.co.lep.gestion.estudiantes.dto.InstitucionDTO;
 import com.co.lep.gestion.estudiantes.dto.MateriaDTO;
 import com.co.lep.gestion.estudiantes.dto.PasswordDTO;
 import com.co.lep.gestion.estudiantes.dto.PeriodoElectivoDTO;
 import com.co.lep.gestion.estudiantes.dto.SedeDTO;
+import com.co.lep.gestion.estudiantes.entity.DetalleEstudianteNotasEntity;
 import com.co.lep.gestion.estudiantes.entity.DocenteEntity;
 import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.entity.EstudianteNotasEntity;
 import com.co.lep.gestion.estudiantes.entity.GradoEntity;
 import com.co.lep.gestion.estudiantes.entity.InstitucionEntity;
 import com.co.lep.gestion.estudiantes.entity.MateriaEntity;
@@ -104,4 +109,16 @@ public interface IAdminService {
 	SedeDTO eliminarSede(@Valid SedeDTO sedesDTO);
 
 	List<MateriaEntity> consultarMateriasGradoById(Long id);
+
+	List<MateriaEntity> consultarMateriaByIdDocente();
+
+	List<EstudianteEntity> consultarEstudiantesByGradoId(@Valid Long gradoId);
+
+	void crearEstudiantesNota(@Valid EstudiantesNotaDTO estudiantesNotaDTO);
+
+	List<EstudianteNotasEntity> consultarEstudiantesNota(EstudiantesNotaDTO estudianteDTO);
+
+	List<DetalleEstudianteNotasEntity> consultarEstudiantesNotaById(@Valid DetalleEstudiantesNotaDTO detalleNotas);
+
+	void actualizarEstudiantesNota(@Valid EstudiantesNotaDTO estudiantesNotaDTO);
 }

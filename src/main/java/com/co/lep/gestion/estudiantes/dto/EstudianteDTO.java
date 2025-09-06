@@ -1,6 +1,7 @@
 package com.co.lep.gestion.estudiantes.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import com.co.lep.gestion.estudiantes.security.entity.User;
@@ -21,7 +22,12 @@ public class EstudianteDTO implements Serializable{
     private User usuarioId;
     private GradoDTO gradoId;
     private EstadoDTO estadoId;
+    private EstudiantesNotaDTO estudiantesNotaId;
     private Date fecCreacion;
+    
+    //campos temporales
+    private String txtObservaciones;
+    private BigDecimal nota;
     
 	public Long getId() {
 		return id;
@@ -95,10 +101,28 @@ public class EstudianteDTO implements Serializable{
 	public void setEstadoId(EstadoDTO estadoId) {
 		this.estadoId = estadoId;
 	}
+	public EstudiantesNotaDTO getEstudiantesNotaId() {
+		return estudiantesNotaId;
+	}
+	public void setEstudiantesNotaId(EstudiantesNotaDTO estudiantesNotaId) {
+		this.estudiantesNotaId = estudiantesNotaId;
+	}
 	public Date getFecCreacion() {
 		return fecCreacion;
 	}
 	public void setFecCreacion(Date fecCreacion) {
 		this.fecCreacion = fecCreacion;
+	}
+	public String getTxtObservaciones() {
+		return txtObservaciones;
+	}
+	public void setTxtObservaciones(String txtObservaciones) {
+		this.txtObservaciones = txtObservaciones;
+	}
+	public BigDecimal getNota() {
+		return nota;
+	}
+	public void setNota(BigDecimal nota) {
+		this.nota = nota;
 	}
 }

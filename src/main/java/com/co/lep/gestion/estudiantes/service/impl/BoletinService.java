@@ -1,4 +1,4 @@
-package com.co.lep.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.service.impl;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -689,7 +689,7 @@ public class BoletinService extends BaseService implements IBoletinService{
 
 			// Verificar si el ID proporcionado existe en la base de datos
 			BoletinEntity boletinExistente = boletinRepository.findById(idBoletin)
-					.orElseThrow(() -> new RuntimeException("Boletin no encontrado"));
+					.orElseThrow(() -> new RegistroNoGuardadoException("Boletin no encontrado"));
 			
 			List<BoletinDetalleEntity> boletinDetalleEntity = boletinDetalleRepository.findByIdBoletin(boletinExistente.getId());
 			

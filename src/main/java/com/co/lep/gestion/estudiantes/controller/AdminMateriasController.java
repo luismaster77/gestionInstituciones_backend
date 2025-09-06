@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +73,30 @@ public class AdminMateriasController {
 			return ResponseEntity.ok(errorResponse);
 		} catch (Exception e) {
 			EntityResponse<MateriaEntity> errorResponse = new EntityResponse<>();
+			errorResponse.setSuccess(false);
+			errorResponse.setMessage(Mensajes.TXT_ERROR_APLICACION + e.getMessage());
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+		}
+	}
+	
+	@GetMapping(value = Constantes.ENDPOINT_CONSULTAR_MATERIA_BY_ID_DOCENTE)
+	public ResponseEntity<EntityResponse<List<MateriaEntity>>> consultarMateriaByIdDocente() {
+		try {
+
+			List<MateriaEntity> materias = iAdminService.consultarMateriaByIdDocente();
+
+			EntityResponse<List<MateriaEntity>> response = new EntityResponse<>();
+			response.setSuccess(true);
+			response.setData(materias);
+			return ResponseEntity.ok(response);
+
+		} catch (RegistroNoEncontradoException ex) {
+			EntityResponse<List<MateriaEntity>> errorResponse = new EntityResponse<>();
+			errorResponse.setSuccess(false);
+			errorResponse.setMessage(ex.getMessage());
+			return ResponseEntity.ok(errorResponse);
+		} catch (Exception e) {
+			EntityResponse<List<MateriaEntity>> errorResponse = new EntityResponse<>();
 			errorResponse.setSuccess(false);
 			errorResponse.setMessage(Mensajes.TXT_ERROR_APLICACION + e.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);

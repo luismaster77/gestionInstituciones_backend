@@ -3,6 +3,7 @@ package com.co.lep.gestion.estudiantes;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,10 +14,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.co.lep.gestion.estudiantes.dto.BoletinDTO;
 import com.co.lep.gestion.estudiantes.entity.BoletinDetalleEntity;
-import com.co.lep.gestion.estudiantes.impl.service.BoletinService;
+import com.co.lep.gestion.estudiantes.entity.BoletinEntity;
 import com.co.lep.gestion.estudiantes.repository.BoletinDetalleRepository;
 import com.co.lep.gestion.estudiantes.repository.BoletinRepository;
 import com.co.lep.gestion.estudiantes.repository.impl.AdminPrincipal;
+import com.co.lep.gestion.estudiantes.service.impl.BoletinService;
 
 @SpringBootTest
 class GestionTest {
@@ -54,10 +56,16 @@ class GestionTest {
 		fail("Not yet implemented");
 	}
 	
-	@Test
+	//@Test
 	void numHorasNoAsistidas1() {
 		Integer numHorasNoAsistidas = adminPrincipal.consultarNumHorasNoAsistidasEstudiante(7L,8L,4L);
 		System.out.println("Numero de horas: "+numHorasNoAsistidas);
+	}
+	
+	@Test
+	void consultarBoletinEstudiante() {
+		Optional<BoletinEntity> boletinEstudiante = boletinRepository.findByEstudianteIdId(1L);
+		System.out.println("Numero de horas: "+boletinEstudiante);
 	}
 
 }

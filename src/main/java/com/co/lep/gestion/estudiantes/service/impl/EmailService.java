@@ -1,4 +1,4 @@
-package com.co.lep.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.service.impl;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -42,9 +42,6 @@ public class EmailService {
 	ConfiguracionAdicional configuracionAdicional;
 
     private final freemarker.template.Configuration freeMarkerConfig;
-    
-    @Value("${devsenior.aplicacion.name}")
-    private String APPLICATION_NAME;
 
     @Value("${devsenior.email.remitente}")
     private String EMAIL_REMITENTE;
@@ -89,7 +86,7 @@ public class EmailService {
             TransactionalEmailsApi apiInstance = new TransactionalEmailsApi();
             SendSmtpEmailSender sender = new SendSmtpEmailSender();
             sender.setEmail(EMAIL_REMITENTE);
-            sender.setName(APPLICATION_NAME);
+            sender.setName(Constantes.APPLICATION_NAME + " " +usuarioDTO.getInstitucionId().getNomInstitucion());
 
             List<SendSmtpEmailTo> toList = new ArrayList<>();
             SendSmtpEmailTo to = new SendSmtpEmailTo();
@@ -135,7 +132,7 @@ public class EmailService {
             TransactionalEmailsApi apiInstance = new TransactionalEmailsApi();
             SendSmtpEmailSender sender = new SendSmtpEmailSender();
             sender.setEmail(EMAIL_REMITENTE);
-            sender.setName(APPLICATION_NAME);
+            sender.setName(Constantes.APPLICATION_NAME);
 
             List<SendSmtpEmailTo> toList = new ArrayList<>();
             SendSmtpEmailTo to = new SendSmtpEmailTo();

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Certificado Académico</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 50px;
+    }
+
+    .encabezado {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .encabezado img {
+      width: 100px;
+      height: auto;
+    }
+
+    .titulo {
+      font-size: 20pt;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .contenido {
+      font-size: 12pt;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+ 	.firmas {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .firmas div {
+      text-align: center;
+      width: 45%;
+      border-top: 1px solid #000;
+      padding-top: 10px;
+    }
+    
+    .footer {
+      margin-top: 30px;
+      font-size: 9pt;
+      text-align: center;
+    }
+
+    .qr {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="encabezado">
+    <#if image??>
+      <img src="${image}" alt="Logo Institución"/>
+    </#if>
+    <h3>${nomInstitucion}</h3>
+    <p>Código DANE: ${dane}</p>
+    <p>${municipio}</p>
+  </div>
+
+  <div class="titulo">
+    CERTIFICADO DE ESTUDIOS
+  </div>
+
+  <div class="contenido">
+    La Secretaría Académica de la <strong>${nomInstitucion}</strong>, certifica que el(la) estudiante 
+    <strong>${nombreEstudiante}</strong>, identificado(a) con <strong>${tipDocumEstudiante}</strong> 
+    No. <strong>${codDocumEstudiante}</strong>, cursó el grado <strong>${grado}</strong> 
+    durante el año lectivo <strong>${anioElectivo}</strong>, en la jornada <strong>Mañana</strong>.
+
+    <#if materias?? && materias?size gt 0>
+      <br/><br/>
+      Durante el año, obtuvo los siguientes resultados académicos:
+      <ul>
+        <#list materias as materia>
+          <li>${materia.nomMateria}: ${materia.notaPrimerPeriodoFormatted}</li>
+        </#list>
+      </ul>
+      Promedio general: <strong>${promedioNotasPrimerPeriodo1}</strong>
+    </#if>
+
+    <#if txtObservaciones1??>
+      <br/>Observaciones: <em>${txtObservaciones1}</em>
+    </#if>
+
+    <br/><br/>
+    <#-- Fecha actual -->
+    <#setting locale="es_ES">
+    <#assign date = .now?date>
+    <#assign day = date?string("d")>
+    <#assign month = date?string("MMMM")>
+    <#assign year = date?string("yyyy")>
+
+    <#assign daysInWords = [
+        "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez",
+        "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte",
+        "veintiuno", "veintidós", "veintitrés", "veinticuatro", "veinticinco", "veintiséis", "veintisiete", "veintiocho", "veintinueve", "treinta", "treinta y uno"
+    ]>
+    <#assign dayInWords = daysInWords[day?number]>
+
+    Se expide el presente certificado a solicitud del interesado, en ${nomInstitucionFooter},
+    a los ${day} (${dayInWords}) días del mes de ${month} de ${year}.
+  </div>
+
+	<table style="width: 570px;margin-top:15%;justify-content: center;text-align: center;margin-right: 200px;">
+		<tbody>
+			<tr>
+				<td style="width: 402.719px; text-align: center;">________________________</td>
+				<td style="width: 336.281px; text-align: center;">________________________</td>
+			</tr>
+			<tr>
+				<td style="width: 402.719px; text-align: center;">${nomDirectorGrado}</td>
+				<td style="width: 336.281px; text-align: center;">${nomRector}</td>
+			</tr>
+			<tr>
+				<td style="width: 402.719px; text-align: center;">DIRECTOR DE GRADO</td>
+				<td style="width: 336.281px; text-align: center;">RECTOR</td>
+			</tr>
+		</tbody>
+	</table>
+
+  <div class="footer">
+    Certificado generado automáticamente por el sistema académico.<br/>
+    Para validar este certificado, visite: <u>www.devseniortech.com</u>
+  </div>
+
+</body>
+</html>

@@ -21,6 +21,7 @@ import com.co.lep.gestion.estudiantes.entity.EstadoEntity;
 import com.co.lep.gestion.estudiantes.entity.NivelEntity;
 import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
 import com.co.lep.gestion.estudiantes.entity.TipoDocumentoEntity;
+import com.co.lep.gestion.estudiantes.entity.TipoEvaluacionEntity;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
 import com.co.lep.gestion.estudiantes.security.entity.Role;
 import com.co.lep.gestion.estudiantes.service.IListaValoresService;
@@ -215,4 +216,28 @@ public class ListaValoresController {
         	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 		}
     }
+    
+
+	@GetMapping(value = Constantes.ENDPOINT_CONSULTAR_TIPO_EVALUACION)
+	public ResponseEntity<EntityResponse<List<TipoEvaluacionEntity>>> consultarTipoEvaluacion() {
+		try {         
+            List<TipoEvaluacionEntity> tipEvaluacionList = iListaValoresService.consultarTipoEvaluacion();
+          
+            EntityResponse<List<TipoEvaluacionEntity>> response = new EntityResponse<>();
+            response.setSuccess(true);
+            response.setData(tipEvaluacionList);
+            return ResponseEntity.ok(response);
+            
+        } catch (RegistroNoEncontradoException ex) {
+        	EntityResponse<List<TipoEvaluacionEntity>> errorResponse = new EntityResponse<>();
+            errorResponse.setSuccess(false);
+            errorResponse.setMessage(ex.getMessage());
+            return ResponseEntity.ok(errorResponse);
+        } catch (Exception e) {
+        	EntityResponse<List<TipoEvaluacionEntity>> errorResponse = new EntityResponse<>();
+            errorResponse.setSuccess(false);
+            errorResponse.setMessage(Mensajes.TXT_ERROR_APLICACION + e.getMessage());
+        	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+		}
+	}
 }

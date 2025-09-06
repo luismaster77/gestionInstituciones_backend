@@ -7,8 +7,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.co.lep.gestion.estudiantes.impl.service.ListaValoresService;
 import com.co.lep.gestion.estudiantes.repository.EstadosRepository;
+import com.co.lep.gestion.estudiantes.service.impl.ListaValoresService;
 
 @SpringBootTest
 class ListaValoresTest {

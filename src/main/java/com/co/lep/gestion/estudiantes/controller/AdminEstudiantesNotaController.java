@@ -14,96 +14,74 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.co.lep.gestion.estudiantes.constantes.Constantes;
 import com.co.lep.gestion.estudiantes.constantes.Mensajes;
-import com.co.lep.gestion.estudiantes.dto.EstudianteDTO;
+import com.co.lep.gestion.estudiantes.dto.DetalleEstudiantesNotaDTO;
+import com.co.lep.gestion.estudiantes.dto.EstudiantesNotaDTO;
+import com.co.lep.gestion.estudiantes.entity.DetalleEstudianteNotasEntity;
 import com.co.lep.gestion.estudiantes.entity.EntityResponse;
-import com.co.lep.gestion.estudiantes.entity.EstudianteEntity;
+import com.co.lep.gestion.estudiantes.entity.EstudianteNotasEntity;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
 import com.co.lep.gestion.estudiantes.service.IAdminService;
 @RestController
 @RequestMapping(Constantes.URL_BASE)
-public class AdminEstudiantesController {
+public class AdminEstudiantesNotaController {
 	
 	@Autowired
 	IAdminService iAdminService;
 	
-	@PostMapping(value = Constantes.ENDPOINT_CONSULTAR_ESTUDIANTE)
-    public ResponseEntity<EntityResponse<List<EstudianteEntity>>> consultarEstudiante(@RequestBody EstudianteDTO estudianteDTO){
+	@PostMapping(value = Constantes.ENDPOINT_CONSULTAR_ESTUDIANTES_NOTA)
+    public ResponseEntity<EntityResponse<List<EstudianteNotasEntity>>> consultarEstudiantesNota(@RequestBody EstudiantesNotaDTO estudiantesNotaDTO){
     	try {
     		
-    		List<EstudianteEntity> estudiantesList = iAdminService.consultarEstudiante(estudianteDTO);
+    		List<EstudianteNotasEntity> estudiantesList = iAdminService.consultarEstudiantesNota(estudiantesNotaDTO);
           
-    		EntityResponse<List<EstudianteEntity>> response = new EntityResponse<>();
+    		EntityResponse<List<EstudianteNotasEntity>> response = new EntityResponse<>();
             response.setSuccess(true);
             response.setData(estudiantesList);
             return ResponseEntity.ok(response);
 			
 		} catch (RegistroNoEncontradoException ex) {
-			EntityResponse<List<EstudianteEntity>> errorResponse = new EntityResponse<>();
+			EntityResponse<List<EstudianteNotasEntity>> errorResponse = new EntityResponse<>();
             errorResponse.setSuccess(false);
             errorResponse.setMessage(ex.getMessage());
             return ResponseEntity.ok(errorResponse);
         } catch (Exception e) {
-        	EntityResponse<List<EstudianteEntity>> errorResponse = new EntityResponse<>();
+        	EntityResponse<List<EstudianteNotasEntity>> errorResponse = new EntityResponse<>();
             errorResponse.setSuccess(false);
             errorResponse.setMessage(Mensajes.TXT_ERROR_APLICACION + e.getMessage());
         	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 		}
     }
     
-    @PostMapping(value = Constantes.ENDPOINT_CONSULTAR_ESTUDIANTE_BY_ID)
-    public ResponseEntity<EntityResponse<EstudianteEntity>> consultarEstudianteById(@Valid @RequestBody EstudianteDTO estudianteDTO){
+    @PostMapping(value = Constantes.ENDPOINT_CONSULTAR_ESTUDIANTES_NOTA_BY_ID)
+    public ResponseEntity<EntityResponse<List<DetalleEstudianteNotasEntity>>> consultarEstudiantesNotaById(@Valid @RequestBody DetalleEstudiantesNotaDTO detalleNotas){
     	try {
     		
-    		EstudianteEntity estudiantes = iAdminService.consultarEstudianteById(estudianteDTO);
+    		List<DetalleEstudianteNotasEntity> estudiantes = iAdminService.consultarEstudiantesNotaById(detalleNotas);
          
-    		EntityResponse<EstudianteEntity> response = new EntityResponse<>();
+    		EntityResponse<List<DetalleEstudianteNotasEntity>> response = new EntityResponse<>();
             response.setSuccess(true);
             response.setData(estudiantes);
             return ResponseEntity.ok(response);
 			
 		} catch (RegistroNoEncontradoException ex) {
-			EntityResponse<EstudianteEntity> errorResponse = new EntityResponse<>();
+			EntityResponse<List<DetalleEstudianteNotasEntity>> errorResponse = new EntityResponse<>();
             errorResponse.setSuccess(false);
             errorResponse.setMessage(ex.getMessage());
             return ResponseEntity.ok(errorResponse);
         } catch (Exception e) {
-        	EntityResponse<EstudianteEntity> errorResponse = new EntityResponse<>();
+        	EntityResponse<List<DetalleEstudianteNotasEntity>> errorResponse = new EntityResponse<>();
             errorResponse.setSuccess(false);
             errorResponse.setMessage(Mensajes.TXT_ERROR_APLICACION + e.getMessage());
         	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
 		}
     }
     
-    @PostMapping(value = Constantes.ENDPOINT_CONSULTAR_ESTUDIANTE_BY_GRADO_ID)
-    public ResponseEntity<EntityResponse<List<EstudianteEntity>>> consultarEstudiantesByGradoId(@Valid @RequestBody Long gradoId){
+    @PostMapping(value = Constantes.ENDPOINT_CREAR_ESTUDIANTES_NOTA)
+    public ResponseEntity<EntityResponse<Object>> crearEstudiantesNota(@Valid @RequestBody EstudiantesNotaDTO estudiantesNotaDTO){
     	try {
     		
-    		List<EstudianteEntity> estudiantesList = iAdminService.consultarEstudiantesByGradoId(gradoId);
-         
-    		EntityResponse<List<EstudianteEntity>> response = new EntityResponse<>();
-            response.setSuccess(true);
-            response.setData(estudiantesList);
-            return ResponseEntity.ok(response);
-			
-		} catch (RegistroNoEncontradoException ex) {
-			EntityResponse<List<EstudianteEntity>> errorResponse = new EntityResponse<>();
-            errorResponse.setSuccess(false);
-            errorResponse.setMessage(ex.getMessage());
-            return ResponseEntity.ok(errorResponse);
-        } catch (Exception e) {
-        	EntityResponse<List<EstudianteEntity>> errorResponse = new EntityResponse<>();
-            errorResponse.setSuccess(false);
-            errorResponse.setMessage(Mensajes.TXT_ERROR_APLICACION + e.getMessage());
-        	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
-		}
-    }
-    
-    @PostMapping(value = Constantes.ENDPOINT_CREAR_ESTUDIANTE)
-    public ResponseEntity<EntityResponse<Object>> crearEstudiante(@Valid @RequestBody EstudianteDTO estudianteDTO){
-    	try {
-    		
-    		iAdminService.crearEstudiante(estudianteDTO);
+    		iAdminService.crearEstudiantesNota(estudiantesNotaDTO);
          
             EntityResponse<Object> response = new EntityResponse<>();
             response.setSuccess(true);
@@ -123,11 +101,11 @@ public class AdminEstudiantesController {
 		}
     }
     
-    @PostMapping(value = Constantes.ENDPOINT_EDITAR_ESTUDIANTE)
-    public ResponseEntity<EntityResponse<Object>> editarEstudiante(@Valid @RequestBody EstudianteDTO estudianteDTO){
+    @PostMapping(value = Constantes.ENDPOINT_EDITAR_ESTUDIANTES_NOTA)
+    public ResponseEntity<EntityResponse<Object>> editarEstudiantesNota(@Valid @RequestBody EstudiantesNotaDTO estudiantesNotaDTO){
     	try {
     		
-            iAdminService.actualizarEstudiante(estudianteDTO);
+            iAdminService.actualizarEstudiantesNota(estudiantesNotaDTO);
     		
     		EntityResponse<Object> response = new EntityResponse<>();
             response.setSuccess(true);

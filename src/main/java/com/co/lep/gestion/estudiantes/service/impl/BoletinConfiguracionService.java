@@ -1,4 +1,4 @@
-package com.co.lep.gestion.estudiantes.impl.service;
+package com.co.lep.gestion.estudiantes.service.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;

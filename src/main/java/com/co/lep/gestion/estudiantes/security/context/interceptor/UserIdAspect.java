@@ -14,7 +14,7 @@ import com.co.lep.gestion.estudiantes.security.entity.User;
 @Component
 public class UserIdAspect {
 
-    @Before("execution(* com.co.flexicraftsolutions.gestion.estudiantes.service.*.*(..))")
+    @Before("execution(* com.co.lep.gestion.estudiantes.service.*.*(..))")
     public void setUserIdInThreadLocal() {
         Long usuarioId = getCurrentUserId();
         Long institucionIdUsuario = getCurrentUserIdInstitucion();

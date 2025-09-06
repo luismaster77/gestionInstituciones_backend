@@ -1,6 +1,8 @@
 package com.co.lep.gestion.estudiantes.constantes;
 
 public class Constantes {
+	
+	public static final String APPLICATION_NAME = "Sistema de Gestión";
 
 	public static final String REQUEST_URL_AUTH = "/api/auth";
 
@@ -88,6 +90,14 @@ public class Constantes {
 	public static final String ENDPOINT_CONSULTAR_PER_ELECTIVO= "/consultar_periodo_electivo";
 	public static final String ENDPOINT_CONSULTAR_ROLES_APLICACION = "/consultar_roles_aplicacion";
 	public static final String ENDPOINT_CONSULTAR_ESTADOS = "/consultar_estados";
+	public static final String ENDPOINT_CONSULTAR_MATERIA_BY_ID_DOCENTE = "/consultar_materias_docente";
+	
+	//ENDPOINT ESTUDIANTES NOTA
+	public static final String ENDPOINT_CREAR_ESTUDIANTES_NOTA = "/crear_estudiantes_nota";
+	public static final String ENDPOINT_CONSULTAR_ESTUDIANTES_NOTA = "/consultar_estudiantes_nota";
+	public static final String ENDPOINT_EDITAR_ESTUDIANTES_NOTA = "/editar_estudiantes_nota";
+	public static final String ENDPOINT_ELIMINAR_ESTUDIANTES_NOTA = "/eliminar_estudiantes_nota";
+	public static final String ENDPOINT_CONSULTAR_ESTUDIANTES_NOTA_BY_ID = "/consultar_estudiantes_nota_id";
 	
 
 	//ENDPOINT BOLETINES
@@ -98,6 +108,10 @@ public class Constantes {
 	public static final String ENDPOINT_CREAR_BOLETIN = "/crear_boletines";
 	public static final String ENDPOINT_EDITAR_BOLETIN = "/editar_boletines";
 	public static final String GENERAR_BOLETIN_PDF = "/generar_boletin_pdf";
+	
+	
+	//ENDPOINT CERTIFICADOS
+	public static final String GENERAR_CERTIFICADO_PDF = "/generar_certificado_pdf";
 
 	public static final String ENDPOINT_DESCARGAR_CSV = "/descargar_xlsx";
 	
@@ -141,6 +155,7 @@ public class Constantes {
 	public static final String ENDPOINT_CONSULTAR_INFO_CONFIGURACION_BOLETIN = "/consultar_info_configuracion";
 
 	public static final String ENDPOINT_CONSULTAR_MATERIAS_GRADO_BY_ID = "/consultar_materias_grado";
+	public static final String ENDPOINT_CONSULTAR_ESTUDIANTE_BY_GRADO_ID = "/consultar_estudiantes_grado";
 
 	public static final String VAULT_URL = "http://iotmonitev.com:8200";
     public static final String ROLE_ID   = "e7be735b-8383-36e8-d9b1-b0a34e422fe2";
@@ -154,4 +169,6 @@ public class Constantes {
 	public static final String COD_CAMPO_URL_BASE = "URL_BASE_FRONTEND";
 
 	public static final String URL_BASE_LOCALHOST = "http://localhost:4200";
+
+	public static final String ENDPOINT_CONSULTAR_TIPO_EVALUACION = "/consultar_tipos_evaluacion";
 }
