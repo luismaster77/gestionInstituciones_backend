@@ -19,5 +19,7 @@ public interface MateriaMapper {
 	
 	MateriaDTO toDTO(MateriaEntity materiaEntity);
 	
+	@Mapping(target = "nivelId", ignore = true)
+	@Mapping(target = "docenteId", ignore = true)
     void updateMateriaFromDto(MateriaDTO dto, @MappingTarget MateriaEntity entity);
 }

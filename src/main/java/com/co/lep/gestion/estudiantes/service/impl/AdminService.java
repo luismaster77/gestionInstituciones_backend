@@ -799,11 +799,6 @@ public class AdminService extends BaseService implements IAdminService {
 			DocenteEntity docenteEntity = docenteRepository.findById(materiaActualizadaDTO.getDocenteId().getId())
 					.orElseThrow(() -> new RegistroNoEncontradoException("Docente no encontrado"));
 
-			materiaExistente.setNivelId(nivelEntity);
-			materiaExistente.setIntensidadHoras(materiaActualizadaDTO.getIntensidadHoras());
-			materiaExistente.setDocenteId(docenteEntity);
-			materiaExistente.setFecCreacion(new Date());
-
 			MateriaMapper.INSTANCE.updateMateriaFromDto(materiaActualizadaDTO, materiaExistente);
 
 			materiaExistente.setNivelId(nivelEntity);

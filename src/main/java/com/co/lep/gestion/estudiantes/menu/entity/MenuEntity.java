@@ -38,6 +38,9 @@ public class MenuEntity {
     @Column(name = "descripcion")
     private String descripcion;
     
+    @Column(name = "clase")
+    private String clase;
+    
     @Column(name = "orden_menu")
     private Integer ordenMenu;
 }

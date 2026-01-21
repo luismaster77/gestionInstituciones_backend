@@ -11,9 +11,9 @@ public class MenuDTO implements Serializable {
 	private String label;
 	private String icon;
 	private String descripcion;
+	private String clase;
 	private Integer ordenMenu;
 	private List<ItemMenuDTO> items;
-	
 	public Long getId() {
 		return id;
 	}
@@ -43,6 +43,12 @@ public class MenuDTO implements Serializable {
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	public String getClase() {
+		return clase;
+	}
+	public void setClase(String clase) {
+		this.clase = clase;
 	}
 	public Integer getOrdenMenu() {
 		return ordenMenu;

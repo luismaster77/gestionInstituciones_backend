@@ -185,7 +185,7 @@ public class CsvService implements ICsvService {
 		gradosList = iListaValoresService.consultarGrados();
 		String[] grados = new String[gradosList.size()];
 		for (int i = 0; i < gradosList.size(); i++) {
-			grados[i] = gradosList.get(i).getNomGrado();
+			grados[i] = gradosList.get(i).getId()+"-"+gradosList.get(i).getNomGrado();
 		}
 		return grados;
 	}

@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.co.lep.gestion.estudiantes.constantes.Constantes;
@@ -18,13 +19,13 @@ import com.co.lep.gestion.estudiantes.entity.GradoEntity;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoEncontradoException;
 import com.co.lep.gestion.estudiantes.repository.GradoRepository;
 import com.co.lep.gestion.estudiantes.service.IAdminService;
+import com.co.lep.gestion.estudiantes.service.impl.GradosService;
 
 @Component
 public class RegistroMapper {
 	
+	@Autowired
 	private IAdminService iAdminService;
-	
-	private GradoRepository gradoRepository;
 
 	public RegistroMapper(IAdminService iAdminService) {
 		this.iAdminService = iAdminService;
@@ -95,8 +96,10 @@ public class RegistroMapper {
     private GradoDTO createGradoDTO(String value) {
         GradoDTO grado = new GradoDTO();
         String idGrado = value.split("-")[0];
-        GradoEntity gradoEntity = gradoRepository.findById(Long.valueOf(idGrado))
-        		.orElseThrow(() -> new RegistroNoEncontradoException("Grado no encontrado"));
+        
+        GradoDTO gradoConsultar = new GradoDTO();
+        gradoConsultar.setId(Long.valueOf(idGrado));
+        GradoEntity gradoEntity = iAdminService.consultarGradoById(gradoConsultar);
         grado.setId(gradoEntity.getId());
         return grado;
     }

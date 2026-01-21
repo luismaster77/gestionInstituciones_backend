@@ -14,8 +14,8 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("https://gestionboletines.devseniortech.com");
-        //config.addAllowedOrigin("*");// Reemplaza con la URL de tu frontend Angular
+        //config.addAllowedOrigin("https://gestionboletines.devseniortech.com");
+        config.addAllowedOrigin("*");// Reemplaza con la URL de tu frontend Angular
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);

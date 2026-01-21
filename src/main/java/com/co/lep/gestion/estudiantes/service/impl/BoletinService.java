@@ -200,13 +200,13 @@ public class BoletinService extends BaseService implements IBoletinService{
 				gradoPromovido = gradoRepository.findById(boletinDTO.getPromovidoGradoId().getId())
 						.orElseThrow(() -> new RuntimeException("Grado no encontrado" + boletinDTO.getPromovidoGradoId().getId()));
 			}
-			
-			
+					
 			if(!user.getRoleId().getName().equals(Constantes.ROLE_ADMIN)) {
 				docenteEntity = docenteRepository.findTop1ByUsuarioId_Id(user.getId())
 						.orElseThrow(() -> new RegistroNoEncontradoException("Docente no encontrado"));						
 				
 			}
+			
 			boletinEntity.setInstitucionId(institucionEntity);
 			boletinEntity.setUsuarioId(user);
 			boletinEntity.setDocenteId(docenteEntity);

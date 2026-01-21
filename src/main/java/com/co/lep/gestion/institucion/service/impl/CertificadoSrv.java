@@ -21,6 +21,7 @@ import com.co.lep.gestion.estudiantes.constantes.Constantes;
 import com.co.lep.gestion.estudiantes.dto.BoletinNotasPeriodosDTO;
 import com.co.lep.gestion.estudiantes.entity.BoletinEntity;
 import com.co.lep.gestion.estudiantes.entity.PeriodoElectivoEntity;
+import com.co.lep.gestion.estudiantes.exepciones.BoletinNoEncontradoException;
 import com.co.lep.gestion.estudiantes.repository.BoletinDetalleRepository;
 import com.co.lep.gestion.estudiantes.repository.BoletinRepository;
 import com.co.lep.gestion.estudiantes.repository.EstudianteRepository;
@@ -60,7 +61,7 @@ public class CertificadoSrv  extends BaseService implements ICertificadoSrv{
 	        Template template = freeMarkerConfig.getTemplate("certificados/certificado.html");
 
 	        BoletinEntity boletinEstudiante = boletinRepository.findByEstudianteIdIdAndPeriodoElectivoIdId(estudianteId,1L)
-	                .orElseThrow(() -> new RuntimeException("Boletin del estudiante no encontrado con ID: " + estudianteId));
+	                .orElseThrow(() -> new BoletinNoEncontradoException("El estudiante no tiene boletines registrados"));
 	        
 	        BigDecimal promedioPeriodoElectivo1 = null;
 	        BigDecimal promedioPeriodoElectivo2	= null;
@@ -206,9 +207,11 @@ public class CertificadoSrv  extends BaseService implements ICertificadoSrv{
 	        // Convertir HTML a PDF con Flying Saucer
 	        return convertirHtmlAPdf(html);
 
+	    } catch (BoletinNoEncontradoException e) {
+	        throw e;
 	    } catch (Exception e) {
 	        e.printStackTrace();
-	        throw new RuntimeException("Error al generar el certificado", e);
+	        throw new RuntimeException("Error interno al generar el certificado", e);
 	    }
 	}
 	

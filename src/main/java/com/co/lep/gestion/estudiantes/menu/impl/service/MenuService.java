@@ -64,6 +64,7 @@ public class MenuService implements IMenuService{
         dto.setLabel(menuEntity.getLabel());
         dto.setIcon(menuEntity.getIcon().getCodIcon());
         dto.setDescripcion(menuEntity.getDescripcion());
+        dto.setClase(menuEntity.getClase());
         dto.setOrdenMenu(menuEntity.getOrdenMenu());
 
         // Obtener los items del menú correspondientes

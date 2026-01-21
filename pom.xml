@@ -172,6 +172,11 @@
 		    <version>20250107</version>
 		</dependency>
 
+		<dependency> <!-- Websocket + STOMP -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
 		<dependency>
 		   <groupId>com.sendinblue</groupId>
 		   <artifactId>sib-api-v3-sdk</artifactId>

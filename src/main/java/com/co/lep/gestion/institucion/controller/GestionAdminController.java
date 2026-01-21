@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.co.lep.gestion.estudiantes.constantes.Constantes;
 import com.co.lep.gestion.estudiantes.constantes.Mensajes;
 import com.co.lep.gestion.estudiantes.entity.EntityResponse;
+import com.co.lep.gestion.estudiantes.exepciones.BoletinNoEncontradoException;
 import com.co.lep.gestion.estudiantes.exepciones.RegistroNoGuardadoException;
 import com.co.lep.gestion.institucion.service.impl.CertificadoSrv;
 
@@ -34,6 +35,11 @@ public class GestionAdminController {
 			response.setData(boletinPDF);
 			return ResponseEntity.ok(response);
 			
+    	} catch (BoletinNoEncontradoException ex) {
+	        EntityResponse<byte[]> errorResponse = new EntityResponse<>();
+	        errorResponse.setSuccess(false);
+	        errorResponse.setMessage(ex.getMessage());
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
 		} catch (RegistroNoGuardadoException ex) {
 	    	EntityResponse<byte[]> errorResponse = new EntityResponse<>();
 	        errorResponse.setSuccess(false);

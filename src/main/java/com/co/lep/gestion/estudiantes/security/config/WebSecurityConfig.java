@@ -61,7 +61,7 @@ public class WebSecurityConfig{
 						"209.145.57.79"
 						,"https://devseniortech.com" 
 						,"https://gestionboletines.devseniortech.com"
-						//,"http://localhost:4200"
+						,"http://localhost:4200"
 						));
 				corsConfiguration.setAllowedMethods(List.of(
 						"HEAD", 
@@ -88,7 +88,10 @@ public class WebSecurityConfig{
                             		"/api/auth/refresh",
                             		"/api/auth/solicitar_reset_pwd",
                             		"/api/auth/valida_token_reset_password",
-                            		"/api/auth/reset_password")
+                            		"/api/auth/reset_password",
+                            		"/ws/**",
+                                    "/ws",
+                                    "/ws/info")
                             .permitAll().anyRequest().authenticated()
                             .and()
                             .sessionManagement(management -> management

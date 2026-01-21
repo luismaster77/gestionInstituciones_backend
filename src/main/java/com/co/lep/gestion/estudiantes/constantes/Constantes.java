@@ -158,9 +158,9 @@ public class Constantes {
 	public static final String ENDPOINT_CONSULTAR_ESTUDIANTE_BY_GRADO_ID = "/consultar_estudiantes_grado";
 
 	public static final String VAULT_URL = "http://iotmonitev.com:8200";
-    public static final String ROLE_ID   = "e7be735b-8383-36e8-d9b1-b0a34e422fe2";
-    public static final String SECRET_ID = "a1f714e8-11e4-564d-c5f9-07de8c1c2509";
-    public static final String SECRET_PATH = "secret/data/devsenior";
+    public static final String ROLE_ID   = "53840445-e7ba-f8f7-49d0-a240acbb71f2";
+    public static final String SECRET_ID = "025ae35f-fc8f-b73c-7654-5acfbe312a65";
+    public static final String SECRET_PATH = "secret/data/nextcol";
     public static final String ENCRYPTOR_KEY = "encryption_key";
 	public static final String ENCRYPTOR_KEY_DB = "db_password";
 	public static final String GPT_MODEL_KEY = "gpt_model_key";
