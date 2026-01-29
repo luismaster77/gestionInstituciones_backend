@@ -91,7 +91,9 @@ public class WebSecurityConfig{
                             		"/api/auth/reset_password",
                             		"/ws/**",
                                     "/ws",
-                                    "/ws/info")
+                                    "/ws/info",
+                                    "/swagger-ui/**",
+                                    "/v3/api-docs/**")
                             .permitAll().anyRequest().authenticated()
                             .and()
                             .sessionManagement(management -> management
